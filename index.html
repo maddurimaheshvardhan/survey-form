@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 16px;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .group {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px;
+            margin-left: 80px;
+            margin-right: 50px;
+        }
+
+        .form-container {
+            background-color: rgb(50, 50, 50);
+            border: 2px solid rgb(243, 231, 231);
+        }
+
+        label,
+        .labeltext {
+            padding-right: 10px;
+            width: 150px;
+        }
+
+        #title {
+            text-align: center;
+            color: #000;
+            background: #f3f5f9;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+        }
+
+        #description {
+            text-align: center;
+            padding: 5px;
+            background: #1d160e;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: inline-block;
+            margin-right: 0.625rem;
+        }
+
+        #submit {
+            display: block;
+            width: 95%;
+            padding: 0.75rem;
+            background-color: orange;
+            color: inherit;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 70%;
+            padding: 5px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        textarea {
+            width: 70%;
+            height: 80px;
+        }
+
+        #survey-form {
+            margin: 10px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            background-color: #555;
+            color: #bbb;
+            outline: none;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .form-container {
+                overflow: scroll;
+                box-sizing: content-box;
+            }
+
+            .group {
+                padding: 10px;
+                margin: 0;
+                display: block;
+            }
+
+            input[type="text"],
+            input[type="number"],
+            input[type="email"] {
+                margin-top: 5px;
+                width: 100%;
+            }
+            textarea {
+                margin-top: 5px;
+                width: 100%;
+            }
+            #dropdown {
+                margin-top: 5px;
+            }
+
+            #itemtext {
+                margin-bottom: 5px;
+            }
+            .labeltextresponse {
+                margin-bottom: 5px;
+            }
+            #submit {
+                width: 100%;
+            }
+            #title {
+                font-size: 40px;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <center> -->
+        <div class="form-container">
+            <header class="header">
+                <h1 id="title">Details of Developer </h1>
+                <p id="description">Happy Developing</p>
+            </header>
+            <form id="survey-form" autocomplete="off">
+    
+                <div class="group">
+                    <label for="name" id="name-label">NAME</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="group">
+                    <label for="email" id="email-label">EMAILID</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="group">
+                    <label for="number" id="number-label">AGE</label>
+                    <input type="number" id="number" min="10" max="99" placeholder="Age">
+                </div>
+    
+                <div class="group">
+                    <p class="labeltext">NATIONALITY</p>
+                    <select name="Country" id="dropdown">
+                        <option value="India">INDIAN</option>
+                        <option value="USA">AMERICAN</option>
+                        <option value="Australia">AUSTRALIAN</option>
+                        <option value="Iran">IRISH</option>
+                        <option value="Russia">EUROPEAN</option>
+                        <option value="Russia">OTHER</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <p class="labeltext labeltextresponse">DEVELOPER</p>
+                    <label><input type="radio" name="Role" value="Male">FRONTEND</label>
+                    <label><input type="radio" name="Role" value="Female">BACKEND</label>
+                    <label><input type="radio" name="Role" value="Both">FULLSTACK</label>
+                </div>
+                <div class="group">
+                    <p class="labeltext labeltextresponse">QUALIFICATION</p>
+                    <label><input type="checkbox" name="Role2" value="10+2">10+2</label>
+                    <label><input type="checkbox" name="Role2" value="Graduation">GRADUATION</label>
+                    <label><input type="checkbox" name="Role2" value="Degree">BOOTCAMP</label>
+                </div>
+                <div class="group">
+                    <p class="labeltext">FEW WORDS ABOUT YOU</p>
+                    <textarea id="comments" name="comments"> </textarea>
+                </div>
+                <div class="group">
+                    <button type="submit" id="submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
